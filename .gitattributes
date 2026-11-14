@@ -1,0 +1,8 @@
+# Same line endings on Mac and Windows (stops fake "whole file changed" diffs)
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.jar binary
