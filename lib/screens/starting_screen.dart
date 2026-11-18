@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../theme/app_theme.dart';
+import 'login_screen.dart';
+import 'onboarding_screen.dart';
 
 class StartingScreen extends StatelessWidget {
   const StartingScreen({super.key});
@@ -24,15 +25,23 @@ class StartingScreen extends StatelessWidget {
               const Spacer(flex: 5),
               _PrimaryButton(
                 label: 'GET STARTED',
+
                 onPressed: () {
-                  // TODO: go to the signup screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) =>
+                    const OnboardingScreen()),
+                  );
                 },
               ),
               const SizedBox(height: 16),
               _SecondaryButton(
                 label: 'I HAVE AN ACCOUNT',
                 onPressed: () {
-                  // TODO: go to the login screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  );
                 },
               ),
             ],
@@ -57,7 +66,8 @@ class _PrimaryButton extends StatelessWidget {
         color: AppColors.primaryDark,
         borderRadius: BorderRadius.circular(14),
       ),
-      padding: const EdgeInsets.only(bottom: 4),
+      // thin dark-green outline, thicker at the bottom (3D look)
+      padding: const EdgeInsets.fromLTRB(2, 2, 2, 5),
       child: Material(
         color: AppColors.primary,
         borderRadius: BorderRadius.circular(14),
